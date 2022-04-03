@@ -6,6 +6,8 @@ package appimobiliaria;
 '------------------'
 */
 
+import appimobiliaria.abstratas.ImovelConstruido;
+
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 
