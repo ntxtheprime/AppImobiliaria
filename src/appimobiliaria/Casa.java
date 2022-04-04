@@ -12,7 +12,6 @@ public class Casa extends ImovelConstruido {
         
     private String qtdOutros;
     private int qtdQuintal;
-    private String status = "liberado";
 
     public Casa(String qtdOutros, int qtdQuintal, int qtdQuartos, int qtdBanheiro,
             int qtdGaragem, int codigo, String tipo, String rua, String bairro,
@@ -23,20 +22,7 @@ public class Casa extends ImovelConstruido {
         this.qtdQuintal = qtdQuintal;
         this.taxaIptu = 2.0;
     }
-    
-    public boolean residirStatus(){
-        if (status.equals("impedido")){
-            return false; //Não é possível residir no imóvel!
-        }
-        
-        return true;
-    }
-        
-    public void imprimeResidirStatus() {
-        boolean sucesso = residirStatus();
-        if(sucesso)System.out.println("Status: Já é possível residir no imóvel!");
-        else System.out.println("Status: Não é possível residir no imóvel!");
-    }    
+
     
     @Override
     public String toString() {

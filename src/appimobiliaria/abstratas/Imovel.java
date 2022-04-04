@@ -22,6 +22,8 @@ public abstract class Imovel {
     protected double precoVista;
     protected double precoPrazo;
 
+    protected String status = "liberado";
+
     protected double taxaIptu = 1.0;
 
     public double valorIptu() {
@@ -40,6 +42,18 @@ public abstract class Imovel {
         this.precoPrazo = precoPrazo;
     }
 
+    public boolean imovelStatus() {
+        if (status.equals("impedido")) {
+            return false; //Não está liberado para construção!
+        }
+
+        return true;
+    }
+    public String imovelStatusTexto() {
+        boolean sucesso = imovelStatus();
+        if (sucesso) return "Status: Está liberado para construção!";
+        else return "Status: Não está liberado para construção!";
+    }
 
     public String toString() {
         df.setRoundingMode(RoundingMode.DOWN);
@@ -53,7 +67,8 @@ public abstract class Imovel {
                 "\nM²: " + this.metrosQuadrado +
                 "\nPreço à vista: " + df.format(this.precoVista) +
                 "\nPreço à prazo: " + df.format(this.precoPrazo) +
-                "\nIPTU: " + df.format(valorIptu());
+                "\nIPTU: " + df.format(valorIptu())+
+                "\n" + this.imovelStatusTexto();
     }
 
 }

@@ -28,4 +28,11 @@ public abstract class ImovelConstruido extends Imovel {
                "\nQuantidades de banheiros: " + this.qtdBanheiro +
                "\nQuantidades de garagens: " + this.qtdGaragem;
     }
+
+    @Override
+    public String imovelStatusTexto() {
+        boolean sucesso = imovelStatus();
+        if (sucesso) return "Status: Já é possível residir no imóvel!";
+        else return "Status: Não é possível residir no imóvel!";
+    }
 }
