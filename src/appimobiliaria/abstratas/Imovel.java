@@ -45,7 +45,7 @@ public abstract class Imovel {
         df.setRoundingMode(RoundingMode.DOWN);
 
 
-        return "Código: " + this.codigo +
+        return  "\nCódigo: " + this.codigo +
                 "\nTipo: " + this.tipo +
                 "\nRua: " + this.rua +
                 "\nBairro: " + this.bairro +

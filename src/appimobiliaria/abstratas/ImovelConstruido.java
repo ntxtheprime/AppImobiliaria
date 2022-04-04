@@ -20,5 +20,12 @@ public abstract class ImovelConstruido extends Imovel {
         this.qtdGaragem = qtdGaragem;
     }
 
-
+    @Override
+    public String toString() {
+        
+        return super.toString() + // super.toString() retorna o toString() da superclasse.
+               "\nQuantidades de quartos: " + this.qtdQuartos +
+               "\nQuantidades de banheiros: " + this.qtdBanheiro +
+               "\nQuantidades de garagens: " + this.qtdGaragem;
+    }
 }

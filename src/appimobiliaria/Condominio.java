@@ -28,63 +28,16 @@ public class Condominio {
         this.numero = numero;
         this.valorCondominio = valorCondominio;
     }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-
-    public String getRua() {
-        return rua;
-    }
-
-    public void setRua(String rua) {
-        this.rua = rua;
-    }
-
-    public String getBairro() {
-        return bairro;
-    }
-
-    public void setBairro(String bairro) {
-        this.bairro = bairro;
-    }
-
-    public int getNumero() {
-        return numero;
-    }
-
-    public void setNumero(int numero) {
-        this.numero = numero;
-    }
-
-    public double getValorCondominio() {
-        return valorCondominio;
-    }
-
-    public void setValorCondominio(double valorCondominio) {
-        this.valorCondominio = valorCondominio;
-    }
-    
+   
     public String toString() {
         df.setRoundingMode(RoundingMode.DOWN);
-        return "\nNome: " + this.getNome() +
-               "\nTipo: " + this.getTipo() + 
-               "\nRua: " + this.getRua() +
-               "\nBairro: " + this.getBairro() +
-               "\nNúmero: " + this.getNumero() +
-               "\nValor: " + this.getValorCondominio();
+        
+        return "\nNome: " + this.nome +
+               "\nTipo: " + this.tipo + 
+               "\nRua: " + this.rua +
+               "\nBairro: " + this.bairro +
+               "\nNúmero: " + this.numero +
+               "\nValor: " + this.valorCondominio;
     }
     
 }

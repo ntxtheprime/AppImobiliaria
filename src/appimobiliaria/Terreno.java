@@ -23,18 +23,7 @@ public class Terreno extends Imovel {
         super(codigo, tipo, rua, bairro, metrosQuadrado, numero, precoVista,
                 precoPrazo);
         this.aterro = aterro;
-    }
-
-    public String getAterro() {
-        return aterro;
-    }
-
-    public void setAterro(String aterro) {
-        this.aterro = aterro;
-    }
-    
-    public double valorIptu() {
-        return 1.0 / 100.0 * this.getPrecoVista();
+        this.taxaIptu = 1.0;
     }
     
     public boolean construcaoStatus(){
@@ -47,20 +36,14 @@ public class Terreno extends Imovel {
     
         public void imprimeConstrucaoStatus() {
         boolean sucesso = construcaoStatus();
-        if(sucesso)System.out.println("Está liberado para construção!");
-        else System.out.println("Não está liberado para construção!");
+        if(sucesso)System.out.println("Status: Está liberado para construção!");
+        else System.out.println("Status: Não está liberado para construção!");
     }
         
+    @Override
     public String toString() {
-        df.setRoundingMode(RoundingMode.DOWN);
-        return "\nTipo: " + this.getTipo() + 
-               "\nRua: " + this.getRua() +
-               "\nBairro: " + this.getBairro() +
-               "\nNúmero: " + this.getNumero() +
-               "\nM²: " + this.getMetrosQuadrado() +
-               "\nAterro: " + this.getAterro() +
-               "\nPreço à vista: " + df.format(this.getPrecoVista()) +
-               "\nPreço à prazo: " + df.format(this.getPrecoPrazo()) +
-               "\nIPTU: " + df.format(valorIptu());
+        
+        return super.toString() + // super.toString() retorna o toString() da superclasse.
+               "\nAterro: " + this.aterro;
     }
 }

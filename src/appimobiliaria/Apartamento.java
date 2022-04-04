@@ -51,12 +51,9 @@ public class Apartamento extends ImovelConstruido {
     @Override
     public String toString() {
 
-        return super.toString() + // super.toString() retorna o toString() da superclasse.
-                "\nCondomínio: " + this.condominio + // e agora juntamos com os valores dessa classe Apartamento
+        return  "\nCondomínio: " + this.condominio + 
                 "\nBloco: " + this.bloco +
                 "\nApartamento: " + this.numeroApartamento +
-                "\nQuantidades de quartos: " + this.qtdQuartos +
-                "\nQuantidades de banheiros: " + this.qtdBanheiro +
-                "\nQuantidades de garagens: " + this.qtdGaragem;
+                super.toString(); // super.toString() retorna o toString() da superclasse.
     }
 }
